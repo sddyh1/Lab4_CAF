@@ -152,7 +152,7 @@ text
 Приложение запущено (консольное). Вывод программы:
 
 text
-=== Демонстрация паттернов Composite, Adapter, Facade ===
+ Демонстрация паттернов Composite, Adapter, Facade 
 
 Структура файлов и папок:
 + корень/ (размер: 2213 байт)
@@ -177,14 +177,14 @@ text
 Чтение из local: Hello, local!
 Чтение из cloud: Hello, cloud!
 
-=== Синхронизация из 'C:/temp/source' в 'cloud_backup' ===
+ Синхронизация из 'C:/temp/source' в 'cloud_backup' 
 Облако: запрос содержимого 'C:/temp/source'
 Создаётся папка: cloud_backup
 Облако: чтение 'файл1.txt'   // если бы файлы существовали
 ... (адаптеры выводят сообщения)
 Синхронизация завершена.
 
-=== Создание резервной копии 'C:/temp/data' в 'cloud_backups/Backup_20260305_143022' ===
+ Создание резервной копии 'C:/temp/data' в 'cloud_backups/Backup_20260305_143022' 
 ...
 Резервное копирование завершено.
 Локально удалено: test.txt
@@ -418,7 +418,7 @@ namespace ConsoleApp1.Facade
 
         public void SyncFolders(string sourcePath, string targetPath)
         {
-            Console.WriteLine($"\n=== Синхронизация из '{sourcePath}' в '{targetPath}' ===");
+            Console.WriteLine($"\n Синхронизация из '{sourcePath}' в '{targetPath}' ");
             var sourceTree = BuildTree(sourcePath, _source);
             CopyTree(sourceTree, targetPath, _target);
             Console.WriteLine("Синхронизация завершена.");
@@ -427,7 +427,7 @@ namespace ConsoleApp1.Facade
         public void BackupFolder(string folderPath, string backupRoot)
         {
             string backupName = $"{backupRoot}/Backup_{DateTime.Now:yyyyMMdd_HHmmss}";
-            Console.WriteLine($"\n=== Создание резервной копии '{folderPath}' в '{backupName}' ===");
+            Console.WriteLine($"\n Создание резервной копии '{folderPath}' в '{backupName}' ");
             var tree = BuildTree(folderPath, _source);
             CopyTree(tree, backupName, _target);
             Console.WriteLine("Резервное копирование завершено.");
@@ -475,7 +475,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("=== Демонстрация паттернов Composite, Adapter, Facade ===\n");
+            Console.WriteLine(" Демонстрация паттернов Composite, Adapter, Facade \n");
 
             // --- Composite ---
             var root = new MyDirectory("корень");
